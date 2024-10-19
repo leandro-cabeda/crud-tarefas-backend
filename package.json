@@ -1,0 +1,20 @@
+{
+  "name": "desafio-tarefas-backend",
+  "version": "1.0.0",
+  "description": "Aplicativo de Gerenciamento de Tarefas (To-Do List) com Filtragem Avançada e Sincronização em Tempo Real",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Leandro Cabeda Rigo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "sequelize": "^6.37.4",
+    "socket.io": "^4.8.0",
+    "sqlite3": "^5.1.7"
+  }
+}
