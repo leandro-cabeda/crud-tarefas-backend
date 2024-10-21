@@ -14,7 +14,7 @@ class CreateTaskService {
 
     const taskCreate = await Task.create({ title, status, priority });
 
-    return { taskCreate };
+    return { task: taskCreate };
   }
 }
 

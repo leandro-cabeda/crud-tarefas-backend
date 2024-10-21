@@ -1,4 +1,4 @@
-const isValidFiesds = body => {
+const isValidFields = body => {
   const fieldsErrors = [];
   const keys = ['title', 'status', 'priority'];
   keys.every(key => {
@@ -12,4 +12,4 @@ const isValidFiesds = body => {
   return fieldsErrors?.length ? "Os campos " + fieldsErrors.join(", ") + " são obrigatórios" : null;
 };
 
-module.exports = isValidFiesds;
+module.exports = isValidFields;

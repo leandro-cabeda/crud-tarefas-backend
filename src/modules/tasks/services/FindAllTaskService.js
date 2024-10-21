@@ -35,7 +35,9 @@ class FindAllTaskService {
     }
 
     if (createdAt) {
-      queryOptions.where.createdAt[Op.gte] = new Date(createdAt);
+      queryOptions.where.createdAt = {
+        [Op.gte]: new Date(createdAt),
+      }
     }
 
     try {

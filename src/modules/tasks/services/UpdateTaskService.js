@@ -5,17 +5,17 @@ class UpdateTaskService {
   async execute(id, taskDto) {
     const { title, status, priority } = taskDto;
 
-    const task = await Task.findByPk(id);
+    const taskFind = await Task.findByPk(Number(id));
 
-    if (!task)
+    if (!taskFind)
       throw new AppError('Tarefa não encontrada com id [ ' + id + ' ]!', 404);
 
     const taskExist = await Task.findOne({ where: { title } });
 
-    if (taskExist && taskExist.id !== id)
+    if (taskExist && taskExist?.id != Number(id))
       throw new AppError('Esta task com o titulo [ ' + title + ' ] já existe na base');
 
-    await task.update({ title, status, priority });
+    const task = await Task.update({ title, status, priority }, { where: { id: Number(id) } });
 
     return { task };
   }
